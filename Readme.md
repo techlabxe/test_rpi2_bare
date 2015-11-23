@@ -68,10 +68,18 @@ GUIというか別窓が開くターミナルソフト。割と使いやすそ�
  * 初めてのベアメタル。手探りで ACT LED の点滅
 * 01_bare_led_withld
  * リンカスクリプト付きにしてみたもの。boot.S とかアリにしたもの. 
+* 02_bare_gpio_sw
+ * GPIOのに接続したスイッチのON/OFF読み取り
+* 02_bare_led_asm
+ * LED (Active) の操作をアセンブリコードでやってみた.
+* 03_bare_uart
+ * フルアセンブラコードで UART を有効化、Hello,world 出力するコード.
+ 
 
 ## 実行手順
 基本的には各ディレクトリで make コマンドを実行すると、 kernel.img が作られるようにしています。
 これを Raspberry Pi 仕様に準拠した microSD カードにコピーして、実機 Raspberry Pi に挿入すれば動くようにしています。
 ここで Raspberry Pi 仕様とは FAT でフォーマットされた microSD カードで、 直下に start.elf, bootcode.bin らが配置されたものをさします。 
+
 確実にやるならば raspbian などの標準的なものをインストールした SD カード上から kernel.* のファイルを削除、config.txt を削除した状態から始めればよいと思います。
 
